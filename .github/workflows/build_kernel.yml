@@ -36,8 +36,8 @@ jobs:
     steps:
       - name: Initializing environment
         run: |
-          git config --global user.name "sirnewbies"
-          git config --global user.email "yusromi04@gmail.com"
+          git config --global user.name "papi64s"
+          git config --global user.email "mhmmdsptra@outlook.com"
           df -h
           ld --version
           gcc -v
@@ -60,6 +60,9 @@ jobs:
           elif [ "${DEVICE}" = "sweet" ]; then
             wget https://raw.githubusercontent.com/sirnewbies/kernel_build_action/main/scripts/sweet_build_script.sh
             bash sweet_build_script.sh
+            elif [ "${DEVICE}" = "sapphiren" ]; then 
+            wget https://raw.githubusercontent.com/papi64s/kernel_build_action/main/scripts/sapphiren_build_script.sh
+            bash sapphiren_build_script.sh
           else
             echo "Device not supported yet"
           fi
