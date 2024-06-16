@@ -48,23 +48,7 @@ jobs:
 
       - name: Compiling
         run: |
-          if [ "${DEVICE}" = "tissot" ]; then
-            wget https://raw.githubusercontent.com/sirnewbies/kernel_build_action/main/scripts/tissot_build_script.sh
-            bash tissot_build_script.sh
-          elif [ "${DEVICE}" = "tissot-mainline" ]; then
-            wget https://raw.githubusercontent.com/sirnewbies/kernel_build_action/main/scripts/tissot-mainline_build_script.sh
-            bash tissot-mainline_build_script.sh
-          elif [ "${DEVICE}" = "topaz" ]; then 
-            wget https://raw.githubusercontent.com/sirnewbies/kernel_build_action/main/scripts/topaz_build_script.sh
-            bash topaz_build_script.sh
-          elif [ "${DEVICE}" = "sweet" ]; then
-            wget https://raw.githubusercontent.com/sirnewbies/kernel_build_action/main/scripts/sweet_build_script.sh
-            bash sweet_build_script.sh
-            elif [ "${DEVICE}" = "sapphiren" ]; then 
             wget https://raw.githubusercontent.com/papi64s/kernel_build_action/test/scripts/sapphiren_build_script.sh
             bash sapphiren_build_script.sh
-          else
-            echo "Device not supported yet"
-          fi
 
 
