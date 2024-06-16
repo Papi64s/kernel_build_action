@@ -12,7 +12,7 @@ init() {
 WORK_DIR=$(pwd)
 ANYKERNEL="${WORK_DIR}/anykernel"
 KERNEL_DIR="sapphiren"
-IMAGE=$WORK_DIR/out/android14-5.15/dist/Image
+IMAGE=$WORK_DIR/out/android13-5.15/dist/Image
 DATE=$(date +"%Y%m%d-%H%M")
 START=$(date +"%s")
 CACHE=1
