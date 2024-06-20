@@ -22,7 +22,7 @@ ARCH=arm64
 export ARCH
 KBUILD_BUILD_HOST="PapiLer"
 export KBUILD_BUILD_HOST
-KBUILD_BUILD_USER="#GengKapak"
+KBUILD_BUILD_USER="GK-Dev"
 export KBUILD_BUILD_USER
 DEVICE="Xiaomi Redmi Note 13 4G"
 export DEVICE
@@ -105,6 +105,7 @@ compile() {
     fi
 
     cd $WORK_DIR
+    ./update_ksu.sh
     LTO=thin BUILD_CONFIG=$KERNEL_DIR/build.config.gki.aarch64 build/build.sh
 
     if ! [ -a "$IMAGE" ]; then
@@ -112,13 +113,13 @@ compile() {
         exit 1
     fi
 
-    git clone --depth=1 https://github.com/papi64s/Anykernel3.git "$ANYKERNEL" -b main
+    git clone --depth=1 https://github.com/papi64s/Anykernel3.git "$ANYKERNEL" -b topaz
     cp "$IMAGE" "$ANYKERNEL"
 }
 # Zipping
 zipping() {
     cd $ANYKERNEL || exit 1
-    zip -r9 Project-KARA-"${BRANCH}"-"${CODENAME}"-"${DATE}".zip ./*
+    zip -r9 Kara-"${BRANCH}"-"${CODENAME}"-"${DATE}".zip ./*
     cd ..
 }
 
