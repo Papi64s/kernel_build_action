@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       device:
-          description: 'device codename (e.g topaz/tissot)'
+          description: 'device codename (e.g topaz/sapphiren)'
           required: true
       repo:
           description: 'Kernel source link (dont include . git at the end)'
@@ -12,13 +12,12 @@ on:
       branch:
           description: 'Kernel source branch'
           required: true
-      token:
-          description: 'Telegram bot token'
-          required: true
-      chat_id:
-          description: 'Telegram chat id'
-          required: true
-
+#      token:
+#          description: 'Telegram bot token'
+#          required: true
+#      chat_id:
+#          description: 'Telegram chat id'
+#          required: true
 
 env:
   TZ: Asia/Jakarta
@@ -32,8 +31,18 @@ env:
 jobs:
   kernel-build:
     runs-on: ubuntu-22.04
+    
+ steps:
 
-    steps:
+    # Cleanup The Actions Workspace Using Custom Composite Run Actions
+      # You might want to Checkout your repo first, but not mandatory
+      - uses: actions/checkout@v3
+      # Cleanup The Actions Workspace Using Custom Composite Run Actions
+      - uses: rokibhasansagar/slimhub_actions@main
+        # Optional key, "retain": Use only if you want something to keep
+        with:
+          retain: "gcc-13"
+    
       - name: Initializing environment
         run: |
           git config --global user.name "papi64s"
