@@ -34,16 +34,7 @@ jobs:
     
  steps:
 
-    # Cleanup The Actions Workspace Using Custom Composite Run Actions
-      # You might want to Checkout your repo first, but not mandatory
-      - uses: actions/checkout@v3
-      # Cleanup The Actions Workspace Using Custom Composite Run Actions
-      - uses: rokibhasansagar/slimhub_actions@main
-        # Optional key, "retain": Use only if you want something to keep
-        with:
-          retain: "gcc-13"
-    
-      - name: Initializing environment
+       - name: Initializing environment
         run: |
           git config --global user.name "papi64s"
           git config --global user.email "mhmmdsptra@outlook.com"
