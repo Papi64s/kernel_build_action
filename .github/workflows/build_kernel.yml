@@ -12,12 +12,12 @@ on:
       branch:
           description: 'Kernel source branch'
           required: true
-#      token:
-#          description: 'Telegram bot token'
-#          required: true
-#      chat_id:
-#          description: 'Telegram chat id'
-#          required: true
+      token:
+          description: 'Telegram bot token'
+          required: true
+      chat_id:
+          description: 'Telegram chat id'
+          required: true
 
 env:
   TZ: Asia/Jakarta
@@ -31,9 +31,8 @@ env:
 jobs:
   kernel-build:
     runs-on: ubuntu-22.04
-    
- steps:
 
+     steps:
        - name: Initializing environment
         run: |
           git config --global user.name "papi64s"
